@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Web3 from "web3";
-import ethBLOCKIE from '../abis/ethBLOCKIE.json'
+//import ethBLOCKIE from '../abis/ethBLOCKIE.json'
 import {MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage} from 'mdb-react-ui-kit';
 import './App.css';
 
 const contractABI = require("../abis/ethBLOCKIE.json")
-const contractAddress = "0x3499DD6CB3e76651468EA6a596Fb371680b2BE41"
+const contractAddress = "0xF5e87Da568fc02810f7dC167d14175e037D312Ce"
 
 
 class App extends Component {
@@ -42,7 +42,7 @@ class App extends Component {
         // create a constant js variable networkId which 
         //is set to blockchain network id 
         const networkId = await web3.request({ method: "net_version"})
-        const networkData = ethBLOCKIE.networks[networkId]
+        const networkData = contractABI.networks[networkId]
          if(networkData) {
 
             //  const abi = ethBLOCKIE.abi;
